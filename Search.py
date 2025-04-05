@@ -4,8 +4,8 @@ import threading
 import tkinter as tk
 from tkinter import filedialog, scrolledtext, ttk
 from pptx import Presentation
-import fitz  # PyMuPDF for PDF files
-from docx import Document  # For .docx files
+import fitz  
+from docx import Document 
 
 def browse_directory():
     directory = filedialog.askdirectory()
@@ -17,7 +17,7 @@ def search_action():
 
 def search_files(directory, pattern, file_extension='*', show_lines=False, progress_callback=None):
     results = []
-    regex = re.compile(pattern, re.IGNORECASE)  # Case-insensitive search
+    regex = re.compile(pattern, re.IGNORECASE)  
     file_count = sum(len(files) for _, _, files in os.walk(directory))
     scanned_files = 0
 
@@ -84,7 +84,7 @@ def save_results(results, output_file="results.txt"):
     with open(output_file, "w", encoding="utf-8") as f:
         f.write("\n".join(results))
 
-# GUI Setup
+
 root = tk.Tk()
 root.title("File Search Tool")
 root.geometry("600x450")
